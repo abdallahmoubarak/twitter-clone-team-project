@@ -137,10 +137,13 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // active signUpBtn
-
+  const infoContainer = document.getElementById("sign-info-container");
+  const codeContainer = document.getElementById("sign-code-container");
   signUpBtn.addEventListener("click", () => {
     if (validateSignUp(name, mail, dob)) {
-      alert("wait for code");
+      localStorage.setItem("info", { name, mail, dob });
+      infoContainer.classList.add("display-none");
+      codeContainer.classList.remove("display-none");
     }
   });
 });

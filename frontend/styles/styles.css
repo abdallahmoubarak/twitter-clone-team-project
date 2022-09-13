@@ -123,6 +123,7 @@
   align-items: center;
   justify-content: center;
   display: none;
+  overflow: hidden;
 }
 
 .pop-up-container {
@@ -138,9 +139,10 @@
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
   padding-bottom: 2rem;
+  overflow: auto;
 }
 
-.sign-info-container {
+.display-none {
   display: none;
 }
 
