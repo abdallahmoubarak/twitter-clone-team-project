@@ -13,12 +13,12 @@
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/sign.js" type="text/javascript"></script>
-
     <title>Twitter Clone</title>
   </head>
   <body>
     <div class="container">
-      <div class="img">
+      <!-- image container section -->
+      <div class="img-container">
         <img height="100%" src="./assets/mainImg.png" alt="" />
         <div class="white-logo">
           <img
@@ -29,6 +29,11 @@
           />
         </div>
       </div>
+
+      <!-- image container section end -->
+
+      <!-- sign switch section -->
+
       <div class="sign-section">
         <div class="sign-logo">
           <img width="100%" src="./assets/logo.svg" alt="" />
@@ -36,7 +41,7 @@
         <div class="sign-title">Happening now</div>
         <div class="sign-group">
           <h1 class="sign-h1">Join Twitter today.</h1>
-          <button class="sign-btn blue-btn">
+          <button class="sign-btn blue-btn" id="sign-up-pop-btn">
             Sign up with a phone number or email
           </button>
           <div class="sub-text">
@@ -49,9 +54,12 @@
           <button class="sign-btn">Sign in</button>
         </div>
       </div>
-      <div class="sign-up-pop-up">
+      <!-- sign switch section end -->
+
+      <!-- sign up pop up section -->
+      <div class="sign-up-pop-up" id="signUp-popUp">
         <div class="pop-up-container">
-          <div class="txt-left cursor">x</div>
+          <div class="txt-left cursor" id="close-signUp">x</div>
           <div class="sign-up-logo">
             <img width="100%" src="./assets/logo.svg" alt="" />
           </div>
@@ -79,6 +87,10 @@
           <button class="sign-btn gray-btn">Get verification code</button>
         </div>
       </div>
+
+      <!-- sign up pop up end -->
+
+      <!-- sign in pop up section -->
     </div>
   </body>
 </html>

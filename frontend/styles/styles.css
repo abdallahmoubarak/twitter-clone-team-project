@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-.img {
+.img-container {
   width: 30rem;
   overflow: hidden;
   position: relative;
