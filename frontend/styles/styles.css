@@ -39,7 +39,7 @@
   overflow: auto;
 }
 
-.sign-logo {
+.sign-left-logo {
   width: 3rem;
 }
 
@@ -99,14 +99,14 @@
 }
 
 @media screen and (max-width: 65rem) {
-  .img {
+  .img-container {
     display: none;
   }
 }
 
 @media screen and (max-width: 65rem) {
   .sign-btn {
-    width: 100%;
+    max-width: 100%;
   }
 }
 

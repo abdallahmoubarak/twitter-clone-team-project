@@ -157,4 +157,18 @@ window.addEventListener("DOMContentLoaded", () => {
     codeContainer.classList.add("display-none");
     infoContainer.classList.remove("display-none");
   });
+
+  // sign done
+
+  const signupBtn = document.getElementById("sign-up-btn");
+
+  signupBtn.addEventListener("click", () => {
+    window.location.replace("/frontend/profile.html");
+  });
+
+  const signInBtn = document.getElementById("sign-in-btn");
+
+  signInBtn.addEventListener("click", () => {
+    window.location.replace("/frontend/profile.html");
+  });
 });
