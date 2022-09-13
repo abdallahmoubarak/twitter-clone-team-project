@@ -12,4 +12,20 @@ window.addEventListener("DOMContentLoaded", () => {
       signUppopUp.style.display = "none";
     });
   });
+
+  //  openning and clossing the Sign in popup
+  const SignInPopBtn = document.getElementById("sign-in-pop-btn");
+  const SignInpopUp = document.getElementById("sign-in-pop-up");
+
+  SignInPopBtn.addEventListener("click", () => {
+    SignInpopUp.style.display = "flex";
+
+    const closeBtn = document.getElementById("close-sign-in");
+
+    closeBtn.addEventListener("click", () => {
+      SignInpopUp.style.display = "none";
+    });
+  });
+
+  // validating sign up
 });
