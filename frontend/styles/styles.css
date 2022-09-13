@@ -79,7 +79,7 @@
   width: 23rem;
   max-width: 100%;
 }
-.sign-btn:hover {
+.btn:hover {
   background-color: #1da0f2d0;
   color: white;
 }
