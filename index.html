@@ -52,18 +52,27 @@
           <div class="txt-left cursor">x</div>
           <div>Create your account</div>
           <div class="input-section-container">
-            <div class="input-container">
-              <input class="sign-input" placeholder="Full name" />
-              <input class="sign-input" placeholder="Phone" />
+            <div class="input-section">
+              <div class="input-container">
+                <input class="sign-input" autocomplete="off" id="name" />
+                <label for="name">Full name</label>
+              </div>
+              <div class="input-container">
+                <input class="sign-input" autocomplete="off" id="phone" />
+                <label for="phone">Phone</label>
+              </div>
             </div>
-            <div class="sub-text txt-right cursor">use email instead</div>
+            <div class="use-mail-txt txt-right cursor">use email instead</div>
           </div>
           <div class="input-section-container">
             <div class="birth-title">
               Date of birth
               <span class="appear-txt">(will not appear for public)</span>
             </div>
-            <input class="sign-input" placeholder="Full name" />
+            <div class="input-container">
+              <input class="sign-input" id="dob" autocomplete="off" />
+              <label for="dob">Date of birth</label>
+            </div>
           </div>
           <button class="sign-btn gray-btn">Get verification code</button>
         </div>

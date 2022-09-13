@@ -140,28 +140,72 @@
 }
 .input-section-container {
   padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
-.input-container {
+.input-section {
   display: flex;
   flex-direction: column;
   align-items: baseline;
   gap: 1.2rem;
 }
+.input-container {
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  position: relative;
+  width: 100%;
+}
 
 .sign-input {
   width: 100%;
   font-size: 1.2rem;
-  padding: 0.6rem 1rem;
-  border: 1px solid gray;
-  border-radius: 0.6rem;
-  -webkit-border-radius: 0.6rem;
-  -moz-border-radius: 0.6rem;
-  -ms-border-radius: 0.6rem;
-  -o-border-radius: 0.6rem;
-  outline-color: #1da1f2;
+  padding-left: 1rem;
+  padding-top: 1.6rem;
+  padding-bottom: 0.4rem;
+  border: none;
+  border: 2px solid gray;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+  outline: none;
 }
 
-.txt-right {
+label {
+  font-size: 1.2rem;
+  text-align: left;
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  padding: 0.2rem 1rem;
+  color: gray;
+  transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  cursor: text;
+}
+.sign-input:focus {
+  border: 2px solid #1da1f2;
+}
+.sign-input:focus + label {
+  font-size: 0.8rem;
+  color: #1da1f2;
+  top: 0.2rem;
+  transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+}
+
+.sign-input:focus + .txt-right {
   text-align: right;
   width: 100%;
 }
@@ -177,6 +221,12 @@
   text-align: left;
 }
 
+.use-mail-txt {
+  font-size: 0.9rem;
+  color: gray;
+  width: 100%;
+  text-align: right;
+}
 .appear-txt {
   font-size: 0.8rem;
 }
