@@ -63,47 +63,75 @@
           <div class="sign-logo">
             <img width="100%" src="./assets/logo.svg" alt="" />
           </div>
-          <div>Create your account</div>
-          <div class="input-section-container">
-            <div class="input-container">
-              <input
-                class="sign-input"
-                autocomplete="off"
-                id="name"
-                placeholder="Full name"
-              />
-              <label for="name">Full name</label>
+          <div class="sign-info-container">
+            <div>Create your account</div>
+            <div class="input-section-container">
+              <div class="input-container">
+                <input
+                  class="sign-input"
+                  autocomplete="off"
+                  id="name"
+                  placeholder="Full name"
+                />
+                <label for="name">Full name</label>
+              </div>
+              <div class="input-container">
+                <input
+                  class="sign-input"
+                  autocomplete="off"
+                  id="mail"
+                  placeholder="Email"
+                />
+                <label for="mail">Email</label>
+              </div>
+              <div class="invalid-msg" id="sign-up-msg"></div>
             </div>
-            <div class="input-container">
-              <input
-                class="sign-input"
-                autocomplete="off"
-                id="mail"
-                placeholder="Email"
-              />
-              <label for="mail">Email</label>
+            <div class="input-section-container">
+              <div class="birth-title">
+                Date of birth
+                <span class="appear-txt">(will not appear for public)</span>
+              </div>
+              <div class="input-container">
+                <input
+                  class="sign-input"
+                  type="date"
+                  id="dob"
+                  autocomplete="off"
+                  placeholder="dob"
+                />
+                <label for="dob">Date of birth</label>
+              </div>
             </div>
-            <div class="invalid-msg" id="sign-up-msg"></div>
+            <button class="sign-btn gray-btn" id="get-code-btn">
+              Get verification code
+            </button>
           </div>
-          <div class="input-section-container">
-            <div class="birth-title">
-              Date of birth
-              <span class="appear-txt">(will not appear for public)</span>
+
+          <!-- verfication section -->
+          <div class="sign-code-container">
+            <div>Check your mail and insert the code</div>
+            <div class="input-section-container">
+              <div class="input-container">
+                <input
+                  class="sign-input"
+                  autocomplete="off"
+                  id="verification-code"
+                  placeholder="Verification code"
+                />
+                <label for="verification-code">Verification code</label>
+              </div>
+              <div class="input-container">
+                <input
+                  class="sign-input"
+                  autocomplete="off"
+                  id="password"
+                  placeholder="password"
+                />
+                <label for="password">password</label>
+              </div>
             </div>
-            <div class="input-container">
-              <input
-                class="sign-input"
-                type="date"
-                id="dob"
-                autocomplete="off"
-                placeholder="dob"
-              />
-              <label for="dob">Date of birth</label>
-            </div>
+            <button class="sign-btn gray-btn" id="sign-up-btn">Sign up</button>
           </div>
-          <button class="sign-btn gray-btn" id="sign-up-btn">
-            Get verification code
-          </button>
         </div>
       </div>
 

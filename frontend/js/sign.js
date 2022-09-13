@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const mail = document.getElementById("mail");
   const dob = document.getElementById("dob");
   const signUpMsg = document.getElementById("sign-up-msg");
-  const signUpBtn = document.getElementById("sign-up-btn");
+  const signUpBtn = document.getElementById("get-code-btn");
 
   const validateSignUp = (name, mail, dob) => {
     valid = true;
@@ -133,6 +133,14 @@ window.addEventListener("DOMContentLoaded", () => {
         signUpBtn.classList.add("blue-btn");
         signUpBtn.classList.add("btn");
       }
+    }
+  });
+
+  // active signUpBtn
+
+  signUpBtn.addEventListener("click", () => {
+    if (validateSignUp(name, mail, dob)) {
+      alert("wait for code");
     }
   });
 });
