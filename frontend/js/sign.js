@@ -139,11 +139,22 @@ window.addEventListener("DOMContentLoaded", () => {
   // active signUpBtn
   const infoContainer = document.getElementById("sign-info-container");
   const codeContainer = document.getElementById("sign-code-container");
+
   signUpBtn.addEventListener("click", () => {
     if (validateSignUp(name, mail, dob)) {
-      localStorage.setItem("info", { name, mail, dob });
+      localStorage.setItem("name", name.value);
+      localStorage.setItem("mail", mail.value);
+      localStorage.setItem("dob", dob.value);
       infoContainer.classList.add("display-none");
       codeContainer.classList.remove("display-none");
     }
+  });
+
+  // back to sign
+  const changeBtn = document.getElementById("change-btn");
+
+  changeBtn.addEventListener("click", () => {
+    codeContainer.classList.add("display-none");
+    infoContainer.classList.remove("display-none");
   });
 });
