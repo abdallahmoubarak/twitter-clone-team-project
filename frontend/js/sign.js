@@ -28,4 +28,34 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // validating sign up
+  const name = document.getElementById("name");
+  const mail = document.getElementById("mail");
+  const signUpMsg = document.getElementById("sign-up-msg");
+
+  const validate = () => {
+    name.addEventListener("blur", () => {
+      if (name.value.length < 5) {
+        name.classList.add("invalid-sign-input");
+        signUpMsg.innerHTML = "Name is not valid";
+      } else {
+        name.classList.remove("invalid-sign-input");
+        signUpMsg.innerHTML = "";
+      }
+    });
+    mail.addEventListener("blur", () => {
+      if (
+        mail.value.includes("@") &
+        (mail.value.indexOf("@") > 2) &
+        (mail.value.length - mail.value.indexOf("@") > 5)
+      ) {
+        mail.classList.remove("invalid-sign-input");
+        signUpMsg.innerHTML = "";
+      } else {
+        mail.classList.add("invalid-sign-input");
+        signUpMsg.innerHTML = "Email is not valid";
+      }
+    });
+  };
+
+  validate();
 });

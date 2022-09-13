@@ -176,6 +176,10 @@
   -o-border-radius: 0.4rem;
   outline: none;
 }
+
+.invalid-sign-input {
+  border: 2px solid red;
+}
 .sign-input::placeholder {
   color: transparent;
 }
@@ -195,6 +199,7 @@ label {
   -o-transition: all 0.1s ease-in;
   cursor: text;
 }
+
 .sign-input:focus {
   border: 2px solid #1da1f2;
 }
@@ -241,4 +246,9 @@ label {
   color: white;
   background-color: gray;
   width: 90%;
+}
+.invalid-msg {
+  color: red;
+  font-size: 1rem;
+  text-align: left;
 }
