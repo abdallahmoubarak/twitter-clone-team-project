@@ -51,16 +51,16 @@
         </div>
         <div class="sign-in">
           <div>Already have an account?</div>
-          <button class="sign-btn">Sign in</button>
+          <button class="sign-btn" id="sign-in-pop-btn">Sign in</button>
         </div>
       </div>
       <!-- sign switch section end -->
 
       <!-- sign up pop up section -->
-      <div class="sign-up-pop-up" id="signUp-popUp">
+      <div class="sign-pop-up" id="sign-up-pop-up">
         <div class="pop-up-container">
-          <div class="txt-left cursor" id="close-signUp">x</div>
-          <div class="sign-up-logo">
+          <div class="txt-left cursor" id="close-sign-up">x</div>
+          <div class="sign-logo">
             <img width="100%" src="./assets/logo.svg" alt="" />
           </div>
           <div>Create your account</div>
@@ -107,6 +107,37 @@
       <!-- sign up pop up end -->
 
       <!-- sign in pop up section -->
+
+      <div class="sign-pop-up" id="signIn-popUp">
+        <div class="pop-up-container">
+          <div class="txt-left cursor" id="close-signIn">x</div>
+          <div class="sign-logo">
+            <img width="100%" src="./assets/logo.svg" alt="" />
+          </div>
+          <div>Create your account</div>
+          <div class="input-section-container">
+            <div class="input-container">
+              <input
+                class="sign-input"
+                autocomplete="off"
+                id="mail"
+                placeholder="Mail"
+              />
+              <label for="mail">Mail</label>
+            </div>
+            <div class="input-container">
+              <input
+                class="sign-input"
+                autocomplete="off"
+                id="pass"
+                placeholder="Pass"
+              />
+              <label for="pass">Pass</label>
+            </div>
+          </div>
+          <button class="sign-btn gray-btn" id="login-btn">Log in</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>

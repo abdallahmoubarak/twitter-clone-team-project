@@ -112,7 +112,7 @@
 
 /* pop up section */
 
-.sign-up-pop-up {
+.sign-pop-up {
   position: absolute;
   top: 0;
   left: 0;
@@ -139,7 +139,7 @@
   -o-border-radius: 1rem;
   padding-bottom: 2rem;
 }
-.sign-up-logo {
+.sign-logo {
   width: 2.6rem;
   margin: 1rem auto;
 }
