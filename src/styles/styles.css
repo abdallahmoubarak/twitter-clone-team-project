@@ -36,6 +36,7 @@
   flex: 1 1;
   margin: auto;
   max-width: 35rem;
+  overflow: auto;
 }
 
 .sign-logo {
@@ -107,4 +108,81 @@
   .sign-btn {
     width: 100%;
   }
+}
+
+/* pop up */
+
+.sign-pop-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000085;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pop-up-container {
+  width: 30rem;
+  min-height: 30rem;
+  padding: 0.2rem 1rem;
+  font-size: 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  padding-bottom: 2rem;
+}
+.input-section-container {
+  padding: 3rem 1rem;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1.2rem;
+}
+
+.sign-input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid gray;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+  outline-color: #1da1f2;
+}
+
+.txt-right {
+  text-align: right;
+  width: 100%;
+}
+.txt-left {
+  text-align: left;
+  width: 100%;
+}
+.cursor {
+  cursor: pointer;
+}
+.birth-title {
+  font-size: 1rem;
+  text-align: left;
+}
+
+.appear-txt {
+  font-size: 0.8rem;
+}
+
+.gray-btn {
+  color: white;
+  background-color: gray;
+  width: 90%;
 }
