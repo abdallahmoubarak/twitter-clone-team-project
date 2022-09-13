@@ -1,0 +1,110 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.img {
+  width: 30rem;
+  overflow: hidden;
+  position: relative;
+  flex: 1 1;
+}
+.white-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5rem;
+}
+.white-logo-img {
+  max-width: 20rem;
+}
+.sign-section {
+  padding: 2rem;
+  flex: 1 1;
+  margin: auto;
+  max-width: 35rem;
+}
+
+.sign-logo {
+  width: 3rem;
+}
+
+.sign-group {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sign-title {
+  padding: clamp(3rem, 2rem + 5vw, 4rem) 0rem;
+  font-size: clamp(1.6rem, 1rem + 5vw, 4rem);
+  font-weight: bold;
+}
+.sub-text {
+  font-size: 0.9rem;
+  color: gray;
+}
+.sign-h1 {
+  font-size: clamp(1rem, 0.8rem + 4vw, 2.6rem);
+}
+.sign-btn {
+  color: #1da1f2;
+  background-color: white;
+  font-size: clamp(0.8rem, 0.8rem + 1vw, 1.1rem);
+  padding: 0.6rem clamp(0.6rem, 0.6rem + 1vw, 1.6rem);
+  border: 2px solid #1da1f2;
+  border-radius: 30rem;
+  -webkit-border-radius: 30rem;
+  -moz-border-radius: 30rem;
+  -ms-border-radius: 30rem;
+  -o-border-radius: 30rem;
+  cursor: pointer;
+  text-align: center;
+  width: 23rem;
+  max-width: 100%;
+}
+.sign-btn:hover {
+  background-color: #1da0f2d0;
+  color: white;
+}
+.blue-btn {
+  color: white;
+  background-color: #1da1f2;
+}
+.sub-text {
+  max-width: 22rem;
+}
+
+.sign-in {
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+@media screen and (max-width: 65rem) {
+  .img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 65rem) {
+  .sign-btn {
+    width: 100%;
+  }
+}
