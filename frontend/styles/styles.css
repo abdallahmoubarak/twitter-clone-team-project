@@ -256,3 +256,10 @@ label {
   font-size: 1rem;
   text-align: left;
 }
+.txt-normal {
+  font-size: 1rem;
+}
+.padding-ver {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
