@@ -14,15 +14,16 @@
         $password = $_POST['password'];
         $password = hash('sha256', $password);
         
+        // depending on the option the phone or the email attribute will be filled in the db
+        $query = $mysqli->prepare("INSERT INTO users(" . $option . ", full_name, birthdate, username, password) VALUES(?, ?, ?, ?, ?)");
         if (isset($phone)){
-            $query = $mysqli->prepare("INSERT INTO users(phone, full_name, birthdate, username, password) VALUES(?, ?, ?, ?, ?)");
             $query->bind_param('sssss', $phone, $full_name, $birthdate, $username, $password);
         }else if (isset($email)){
-            $query = $mysqli->prepare("INSERT INTO users(email, full_name, birthdate, username, password) VALUES(?, ?, ?, ?, ?)");
             $query->bind_param('sssss', $email, $full_name, $birthdate, $username, $password);
         }
         $query->execute();
         
+        // will be returned by the api to know if the insert was successfull
         $response = ["status" => TRUE];
         return json_encode($response);
     }
