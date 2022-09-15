@@ -12,6 +12,7 @@
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/profile.js" type="text/javascript"></script>
+
     <title>Profile</title>
   </head>
   <body>
@@ -24,19 +25,17 @@
           </div>
         </div>
         <div class="nav-items-container">
-          <div class="nav-item">
+          <div class="nav-item" id="home-btn">
             <div class="nav-img">
               <img width="100%" src="./assets/home-icon.svg" />
             </div>
-            <div class="tablet-mode-display-none" id="home-btn">Home</div>
+            <div class="tablet-mode-display-none">Home</div>
           </div>
-          <div class="nav-item">
+          <div class="nav-item" id="profile-btn">
             <div class="nav-img">
               <img width="80%" src="./assets/profile-active-icon.svg" />
             </div>
-            <div class="tablet-mode-display-none font-bold" id="profile-btn">
-              Profile
-            </div>
+            <div class="tablet-mode-display-none font-bold">Profile</div>
           </div>
           <button class="nav-btn">Tweet</button>
         </div>
@@ -49,6 +48,27 @@
             </div>
           </div>
           <div class="user-points tablet-mode-display-none font-bold">...</div>
+        </div>
+      </div>
+
+      <!-- user pop up -->
+      <div class="user-pop-up-container display-none" id="user-pop-up">
+        <div class="user-pop-up-background" id="pop-background"></div>
+        <div class="user-pop-up">
+          <div class="border-bottom">
+            <div class="user-info-container">
+              <div class="user-info user-pop-head">
+                <div class="user-img-container">img</div>
+                <div class="tablet-mode-display-none">
+                  <div class="font-bold">user name</div>
+                  <div>@username</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="log-out lightgray-background" id="log-out">
+            Log out from @username
+          </div>
         </div>
       </div>
 
