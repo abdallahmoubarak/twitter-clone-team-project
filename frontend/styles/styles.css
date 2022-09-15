@@ -280,7 +280,14 @@ label {
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
   flex: 1 1 30rem;
+  position: relative;
   min-width: 30rem;
+}
+@media screen and (max-width: 40rem) {
+  .main-column {
+    flex: 1 1;
+    min-width: 20;
+  }
 }
 
 .nav-column {
@@ -291,6 +298,8 @@ label {
   align-items: flex-end;
   justify-content: center;
   height: 100vh;
+  position: sticky;
+  top: 0;
   max-width: 20rem;
 }
 
@@ -307,6 +316,7 @@ label {
   align-items: center;
   gap: 1rem;
   padding: 0.5rem 1rem;
+  padding-right: 3rem;
   cursor: pointer;
   width: fit-content;
   border-radius: 40rem;
@@ -413,11 +423,29 @@ label {
 .nav-btn:hover {
   background-color: #1b97e4;
 }
+.nav-tweet-icon {
+  display: none;
+}
 
 @media screen and (max-width: 65rem) {
+  .nav-column {
+    padding: 0rem;
+  }
   .tablet-mode-display-none {
     display: none;
   }
+  .nav-tweet-icon {
+    display: block;
+  }
+  .nav-item {
+    padding-right: 1rem;
+  }
+  .nav-btn {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.6rem;
+  }
+
   .nav-column {
     flex: 1 1 5rem;
     align-items: center;
@@ -471,6 +499,15 @@ label {
     left: calc(3rem + (100vw - 85rem) / 2);
   }
 }
+
+@media screen and (max-width: 44rem) {
+  .search-column {
+    display: none;
+  }
+  .nav-column {
+    flex: 0;
+  }
+}
 .user-pop-head {
   padding: 1rem 0.2rem;
 }
@@ -486,7 +523,12 @@ label {
 
 .search-column {
   flex: 1 1 20rem;
+}
+.search-top-bar {
   padding: 0.6rem 2rem;
+  position: sticky;
+  top: 0px;
+  background: #fffffffb;
 }
 .search-input-container {
   display: flex;
@@ -504,7 +546,7 @@ label {
   outline: none;
   font-size: 1rem;
   background-color: transparent;
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 1rem;
   padding-left: 3rem;
   border-radius: 40rem;
   -webkit-border-radius: 40rem;
@@ -528,6 +570,11 @@ label {
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+  background: #fffffffb;
 }
 
 .arrow-img {
@@ -610,7 +657,20 @@ label {
   -ms-border-radius: 2rem;
   -o-border-radius: 2rem;
 }
-
+@media screen and (max-width: 25rem) {
+  .nav-column {
+    display: none;
+  }
+  .head-user-img-section {
+    justify-content: center;
+  }
+  .setup {
+    display: none;
+  }
+  .profile-user-section {
+    text-align: center;
+  }
+}
 /* profile info */
 
 .profile-info {

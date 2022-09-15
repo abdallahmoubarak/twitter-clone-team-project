@@ -37,7 +37,12 @@
             </div>
             <div class="tablet-mode-display-none font-bold">Profile</div>
           </div>
-          <button class="nav-btn">Tweet</button>
+          <button class="nav-btn">
+            <div class="tablet-mode-display-none">Tweet</div>
+            <div class="nav-tweet-icon">
+              <img width="100%" src="./assets/tweet.svg" alt="" />
+            </div>
+          </button>
         </div>
         <div class="user-info-container lightgray-background" id="user-btn">
           <div class="user-info">
@@ -127,7 +132,10 @@
             <div class="tab-bar-item">Likes</div>
           </div>
 
-          <div class="tab-container"></div>
+          <div class="tab-container">
+            <div><img width="100%" src="./assets/twiiit.png" alt="" /></div>
+            <div><img width="100%" src="./assets/twiiit.png" alt="" /></div>
+          </div>
         </div>
       </div>
 
@@ -135,11 +143,13 @@
 
       <!-- Search column-->
       <div class="search-column">
-        <div class="search-input-container">
-          <div class="search-img">
-            <img width="100%" src="./assets/search-icon.svg" alt="" />
+        <div class="search-top-bar">
+          <div class="search-input-container">
+            <div class="search-img">
+              <img width="100%" src="./assets/search-icon.svg" alt="" />
+            </div>
+            <input class="search-input" placeholder="Search Twitter" />
           </div>
-          <input class="search-input" placeholder="Search Twitter" />
         </div>
       </div>
 
