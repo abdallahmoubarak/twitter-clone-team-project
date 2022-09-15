@@ -18,8 +18,35 @@
     <div class="three-column-container">
       <!-- navigation column -->
       <div class="nav-column">
-        <div class="sign-logo">
-          <img width="100%" src="./assets/logo.svg" alt="" />
+        <div class="nav-logo-container">
+          <div class="nav-logo">
+            <img width="100%" src="./assets/logo.svg" alt="" />
+          </div>
+        </div>
+        <div class="nav-items-container">
+          <div class="nav-item">
+            <div class="nav-img">
+              <img width="100%" src="./assets/home-icon.svg" />
+            </div>
+            <div class="tablet-mode-display-none">Home</div>
+          </div>
+          <div class="nav-item">
+            <div class="nav-img">
+              <img width="80%" src="./assets/profile-active-icon.svg" />
+            </div>
+            <div class="tablet-mode-display-none font-bold">Profile</div>
+          </div>
+          <button class="nav-btn">Tweet</button>
+        </div>
+        <div class="user-info-container">
+          <div class="user-info">
+            <div class="user-img-container">img</div>
+            <div class="tablet-mode-display-none">
+              <div class="font-bold">user name</div>
+              <div>@username</div>
+            </div>
+          </div>
+          <div class="user-points tablet-mode-display-none font-bold">...</div>
         </div>
       </div>
 
@@ -31,7 +58,14 @@
       <!-- main column end-->
 
       <!-- Search column-->
-      <div>Search</div>
+      <div class="search-column">
+        <div class="search-input-container">
+          <div>
+            <img width="100%" src="./assets/home-icon.svg" alt="" />
+          </div>
+          <input class="search-input" placeholder="Search Twitter" />
+        </div>
+      </div>
 
       <!-- Search column end-->
     </div>
