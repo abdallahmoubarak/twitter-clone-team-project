@@ -333,7 +333,7 @@ label {
   align-items: center;
   justify-content: space-between;
   width: 90%;
-  padding: 1rem;
+  padding: 0.8rem 1rem;
   cursor: pointer;
   border-radius: 40rem;
   -webkit-border-radius: 40rem;
@@ -434,30 +434,35 @@ label {
 
 .search-column {
   flex: 1 1 20rem;
-  padding: 1rem;
+  padding: 0.6rem 2rem;
 }
-
+.search-input-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+.search-img {
+  position: absolute;
+  left: 1.2rem;
+}
 .search-input {
   width: 100%;
   border: none;
   outline: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background-color: transparent;
-}
-
-.search-input-container {
-  display: flex;
-  align-items: center;
   padding: 0.8rem 1rem;
-  border: 1px solid #eee;
-  background-color: #eee;
-  gap: 1rem;
+  padding-left: 3rem;
   border-radius: 40rem;
   -webkit-border-radius: 40rem;
   -moz-border-radius: 40rem;
   -ms-border-radius: 40rem;
   -o-border-radius: 40rem;
+  border: 1px solid #eee;
+  background-color: #eee;
 }
+
 .search-input:focus {
   background: white;
   border: 1px solid #1b97e4;
