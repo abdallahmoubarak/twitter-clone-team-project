@@ -5,6 +5,8 @@
             $phone = $_POST['phone'];
         }else if ($option == "email"){
             $email = $_POST['email'];
+        }else if ($option == 'username'){
+            $username = $_POST['username'];
         }
         $password = $_POST['password'];
         $password = hash('sha256', $password);
@@ -14,7 +16,9 @@
         if (isset($phone)){
             $query->bind_param('ss', $phone, $password);
         }else if(isset($email)){
-            $query->bind_param("ss", $email, $password);
+            $query->bind_param('ss', $email, $password);
+        }else if(isset($username)){
+            $query->bind_param('ss', $username, $password);
         }
         $query->execute();
         $arr = $query->get_result();
