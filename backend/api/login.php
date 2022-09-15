@@ -24,10 +24,9 @@
         $arr = $query->get_result();
 
         // load all account attributes into result array
-        $result = [];
-        while ($value = $arr->fetch_assoc()){
-            $result[] = $value;
-        }
+        // no while loop since the result will be only one account
+        $result = $arr->fetch_assoc();
+
 
         // if the result array is empty set success to false 
         if(!$result){
