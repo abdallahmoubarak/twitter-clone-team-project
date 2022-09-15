@@ -659,7 +659,29 @@ label {
 }
 @media screen and (max-width: 25rem) {
   .nav-column {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    top: auto;
+    flex-direction: row;
+    height: fit-content;
+    background-color: white;
+    z-index: 8;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.6rem;
+  }
+  .nav-items-container {
+    justify-content: space-around;
+  }
+  .nav-logo-container {
     display: none;
+  }
+  .user-info-container {
+    display: none;
+  }
+  .nav-column div {
+    flex-direction: row;
   }
   .head-user-img-section {
     justify-content: center;

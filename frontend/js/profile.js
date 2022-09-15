@@ -23,4 +23,16 @@ window.addEventListener("DOMContentLoaded", () => {
   logOut.addEventListener("click", () => {
     window.location.replace("/frontend/index.html");
   });
+
+  // following
+
+  const following = document.getElementById("following");
+  const followers = document.getElementById("followers");
+
+  followers.addEventListener("click", () => {
+    window.location.href = "/frontend/follow.html";
+  });
+  following.addEventListener("click", () => {
+    window.location.href = "/frontend/follow.html";
+  });
 });
