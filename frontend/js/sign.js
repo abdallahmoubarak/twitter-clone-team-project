@@ -169,6 +169,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const signInBtn = document.getElementById("sign-in-btn");
 
   signInBtn.addEventListener("click", () => {
-    window.location.replace("/frontend/main.html");
+    window.location.replace("/frontend/home.html");
   });
 });

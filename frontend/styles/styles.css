@@ -265,3 +265,17 @@ label {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+/* Profile */
+
+.three-column-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.main-column {
+  width: 30rem;
+  border-left: 1px solid lightslategray;
+  border-right: 1px solid lightslategray;
+}
