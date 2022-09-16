@@ -1,10 +1,4 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const homeBtn = document.getElementById("home-btn");
-
-  homeBtn.addEventListener("click", () => {
-    window.location.href = "/frontend/home.html";
-  });
-
   //   log out
 
   const popBackground = document.getElementById("pop-background");
@@ -24,21 +18,15 @@ window.addEventListener("DOMContentLoaded", () => {
     window.location.replace("/frontend/index.html");
   });
 
-  // following
-
-  const following = document.getElementById("following");
-  const followers = document.getElementById("followers");
-
-  followers.addEventListener("click", () => {
-    window.location.href = "/frontend/follow.html";
-  });
-  following.addEventListener("click", () => {
-    window.location.href = "/frontend/follow.html";
-  });
-
   // close and open tweet pop up
   const tweetPopUpBtn = document.getElementById("tweet-pop-up-btn");
+  const tweetPopUp = document.getElementById("tweet-pop-up");
   const closeTweet = document.getElementById("close-tweet");
 
-  tweetPopUp.addEventListener("click", () => {});
+  tweetPopUpBtn.addEventListener("click", () => {
+    tweetPopUp.classList.remove("display-none");
+  });
+  closeTweet.addEventListener("click", () => {
+    tweetPopUp.classList.add("display-none");
+  });
 });
