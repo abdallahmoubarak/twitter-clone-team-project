@@ -18,6 +18,14 @@
             $query = $mysqli->prepare('INSERT INTO follows(follower_id, followed_id) VALUES(?, ?)');
             $query->bind_param('ii', $follower, $followed);
             $query->execute();
+            // increment the following count of the follower user
+            $query->prepare('UPDATE users SET following_count=following_count+1 WHERE id=?');
+            $query->bind_param('i', $follower);
+            $query->execute();
+            // increment the follower count of the followed user
+            $query->prepare('UPDATE users SET follower_count=follower_count+1 WHERE id=?');
+            $query->bind_param('i', $followed);
+            $query->execute();
             $response['success'] = TRUE;
         }catch(Exception $e){
             $response['success'] = FALSE;
