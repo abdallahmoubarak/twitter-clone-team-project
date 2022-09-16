@@ -1,4 +1,19 @@
 window.addEventListener("DOMContentLoaded", () => {
+  //  profile btn
+  const profileBtn = document.getElementById("profile-btn");
+
+  profileBtn.addEventListener("click", () => {
+    window.location.href = "/frontend/profile.html";
+  });
+
+  // home btn
+
+  const homeBtn = document.getElementById("home-btn");
+
+  homeBtn.addEventListener("click", () => {
+    window.location.href = "/frontend/home.html";
+  });
+
   //   log out
 
   const popBackground = document.getElementById("pop-background");
