@@ -866,6 +866,31 @@ label {
   -o-border-radius: 0 0 0.6rem 0.6rem;
 }
 
+/* user pop up image */
+.user-pop-up-body {
+  padding: 2rem;
+}
+.pop-logo {
+  margin: auto;
+  width: 2rem;
+  height: 2rem;
+  padding-top: 2rem;
+  position: absolute;
+  left: 48%;
+}
+.user-pop-up-image-input {
+  width: 13rem;
+  height: 13rem;
+  background-color: #eee;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+}
+
 /* media queries */
 
 @media screen and (min-width: 85rem) {
