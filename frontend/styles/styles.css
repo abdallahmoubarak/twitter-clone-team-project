@@ -738,7 +738,7 @@ label {
   border: none;
   border-bottom: 1px solid #eee;
   flex: 1 1 100%;
-  min-height: 6rem;
+  min-height: 8rem;
 }
 
 .tweet-pop-up-footer {
