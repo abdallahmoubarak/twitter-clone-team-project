@@ -754,6 +754,68 @@ label {
   height: 1.4rem;
   cursor: pointer;
 }
+/* tweet component */
+.tweet-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 0rem 1rem;
+}
+.tweet-img-side {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.tweet-side {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+  padding: 0.4rem 1rem;
+  padding-right: 0rem;
+}
+.tweet-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tweet-img {
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+  overflow: hidden;
+}
+
+.tweet-txt {
+  width: 100%;
+  padding-bottom: 0.6rem;
+}
+.tweet-user-name-container {
+  display: flex;
+  gap: 0.6rem;
+}
+.like-button {
+  padding: 1rem 0rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  width: fit-content;
+  color: #333;
+}
+.like-img {
+  width: 1.3rem;
+  height: 1.3rem;
+  font-size: 1.2rem;
+}
+.like-button:hover > .like-img {
+  text-shadow: 0px 0px 3px #ff002be8;
+}
+.like-button:hover {
+  color: #ff002b;
+}
+
 /* media queries */
 
 @media screen and (min-width: 85rem) {
@@ -881,6 +943,10 @@ label {
   }
   .profile-user-section {
     text-align: center;
+  }
+  .tweet-user-name-container {
+    flex-direction: column;
+    gap: 0;
   }
 }
 

@@ -1,3 +1,45 @@
+const tweetBlock = (
+  userImage,
+  userName,
+  tweetUserName,
+  tweetTxt,
+  tweetLikes
+) => {
+  return `<div class="tweet-container">
+  <div class="tweet-img-side">
+    <div class="tweet-user-img-container">
+      <img
+        width="100%"
+        height="100%"
+        src="${userImage}"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="tweet-side">
+    <div class="tweet-head">
+      <div class="tweet-user-name-container">
+        <div class="font-bold">${userName}</div>
+        <div class="font-small">${tweetUserName}</div>
+      </div>
+      <div class="user-points font-bold">...</div>
+    </div>
+    <div class="tweet-body">
+      <div class="tweet-txt">${tweetTxt}</div>
+      <div class="tweet-img">
+        <img width="100%" src="./assets/mainImg.png" alt="" />
+      </div>
+      <div class="like-button" id="like-btn">
+        <div class="like-img">
+          <i class="fa fa-heart"></i>
+        </div>
+        <div>${tweetLikes}</div>
+      </div>
+    </div>
+  </div>
+</div>`;
+};
+
 window.addEventListener("DOMContentLoaded", () => {
   //  profile btn
   const profileBtn = document.getElementById("profile-btn");
@@ -44,4 +86,6 @@ window.addEventListener("DOMContentLoaded", () => {
   closeTweet.addEventListener("click", () => {
     tweetPopUp.classList.add("display-none");
   });
+
+  // like btn
 });
