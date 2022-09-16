@@ -141,6 +141,7 @@
 
           <div class="tab-container">
             <div id="tab-bar-tweets">
+              <!-- tweet component -->
               <div class="tweet-container">
                 <div class="tweet-img-side">
                   <div class="tweet-user-img-container">
@@ -158,7 +159,14 @@
                       <div class="font-bold">User name</div>
                       <div class="font-small">@username</div>
                     </div>
-                    <div class="user-points font-bold">...</div>
+                    <input
+                      class="user-points font-bold options lightgray-background"
+                      placeholder="..."
+                    />
+                    <div class="pop-options">
+                      <div class="lightgray-background block">Block user</div>
+                      <div class="lightgray-background unfollow">Unfollow</div>
+                    </div>
                   </div>
                   <div class="tweet-body">
                     <div class="tweet-txt">tweet</div>
@@ -174,6 +182,8 @@
                   </div>
                 </div>
               </div>
+
+              <!-- end -->
 
               <div><img width="100%" src="./assets/twiiit.png" alt="" /></div>
               <div><img width="100%" src="./assets/twiiit.png" alt="" /></div>
