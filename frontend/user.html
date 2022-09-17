@@ -1,0 +1,273 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+    <link rel="icon" href="./assets/logo.svg" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/profile.js" type="text/javascript"></script>
+    <script src="./js/user.js" type="text/javascript"></script>
+    <script src="./js/commen.js" type="text/javascript"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>User Profile</title>
+  </head>
+  <body>
+    <div class="three-column-container">
+      <!-- navigation column -->
+      <div class="nav-column">
+        <div class="nav-logo-container">
+          <div class="nav-logo">
+            <img width="100%" src="./assets/logo.svg" alt="" />
+          </div>
+        </div>
+        <div class="nav-items-container">
+          <div class="nav-item" id="home-btn">
+            <div class="nav-img">
+              <img width="100%" src="./assets/home-icon.svg" />
+            </div>
+            <div class="tablet-mode-display-none">Home</div>
+          </div>
+          <div class="nav-item" id="profile-btn">
+            <div class="nav-img">
+              <img width="80%" src="./assets/profile-icon.svg" />
+            </div>
+            <div class="tablet-mode-display-none">Profile</div>
+          </div>
+          <button class="nav-btn" id="tweet-pop-up-btn">
+            <div class="tablet-mode-display-none">Tweet</div>
+            <div class="nav-tweet-icon">
+              <img width="100%" src="./assets/tweet.svg" alt="" />
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- navigation column end -->
+
+      <!-- main column -->
+      <div class="main-column">
+        <div class="main-column-top-bar">
+          <div class="arrow-img">
+            <img width="100%" src="./assets/arow.svg" alt="" />
+          </div>
+          <div>
+            <div class="top-bar-title">User name</div>
+            <div class="font-small">0 Tweets</div>
+          </div>
+        </div>
+
+        <div class="head-img"></div>
+        <div class="head-user-img-section">
+          <div class="head-user-img-container">
+            <img width="100%" src="./assets/user.svg" alt="" />
+          </div>
+          <div class="btn-container">
+            <button
+              class="lightgray-background setup font-bold"
+              id="follow-btn"
+            >
+              Follow</button
+            ><button
+              class="lightgray-background setup font-bold"
+              id="block-btn"
+            >
+              Block
+            </button>
+          </div>
+        </div>
+        <div class="profile-info">
+          <div class="profile-user-section font-large">
+            <div class="font-bold">User name</div>
+            <div class="font-small">@username</div>
+          </div>
+          <div class="last-join-container">
+            <div class="calendar-container">
+              <img width="100%" src="./assets/calendar.svg" alt="" />
+            </div>
+            <div class="font-small">Joined September 2022</div>
+          </div>
+          <div class="profile-info-follow-container">
+            <div class="underline font-small" id="following">
+              <span class="font-bold">0 </span>Following
+            </div>
+            <div class="underline font-small" id="followers">
+              <span class="font-bold">0 </span>Followers
+            </div>
+          </div>
+        </div>
+
+        <!-- tabs -->
+        <div>
+          <div class="tab-bar">
+            <div class="tab-bar-item active" id="tweets">Tweets</div>
+            <div class="tab-bar-item" id="likes">Likes</div>
+          </div>
+
+          <div class="tab-container">
+            <div id="tab-bar-tweets">
+              <!-- tweet component -->
+              <div class="tweet-container">
+                <div class="tweet-img-side">
+                  <div class="tweet-user-img-container">
+                    <img
+                      width="100%"
+                      height="100%"
+                      src="./assets/user.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="tweet-side">
+                  <div class="tweet-head">
+                    <div class="tweet-user-name-container">
+                      <div class="font-bold">User name</div>
+                      <div class="font-small">@username</div>
+                    </div>
+                    <input
+                      class="user-points font-bold options lightgray-background"
+                      placeholder="..."
+                    />
+                    <div class="pop-options">
+                      <div class="lightgray-background block">Block user</div>
+                      <div class="lightgray-background unfollow">Unfollow</div>
+                    </div>
+                  </div>
+                  <div class="tweet-body">
+                    <div class="tweet-txt">tweet</div>
+                    <div class="tweet-img">
+                      <img width="100%" src="./assets/mainImg.png" alt="" />
+                    </div>
+                    <div class="like-button" id="like-btn">
+                      <div class="like-img">
+                        <i class="fa fa-heart"></i>
+                      </div>
+                      <div>200</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- end -->
+
+              <div><img width="100%" src="./assets/twiiit.png" alt="" /></div>
+              <div><img width="100%" src="./assets/twiiit.png" alt="" /></div>
+            </div>
+            <div class="display-none" id="tab-bar-likes">
+              <div><img width="100%" src="./assets/twiit.png" alt="" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- main column end-->
+
+      <!-- Search column-->
+      <div class="search-column">
+        <div class="search-top-bar">
+          <div class="search-input-container">
+            <div class="search-img">
+              <img width="100%" src="./assets/search-icon.svg" alt="" />
+            </div>
+            <input class="search-input" placeholder="Search Twitter" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Search column end-->
+
+      <!-- tweet pop-up -->
+      <div class="tweet-pop-up display-none" id="tweet-pop-up">
+        <div class="tweet-pop-up-container">
+          <div class="tweet-pop-up-head">
+            <div class="close-tweet lightgray-background" id="close-tweet">
+              x
+            </div>
+          </div>
+          <div class="tweet-pop-up-body">
+            <div class="tweet-img-side">
+              <div class="tweet-user-img-container">
+                <img
+                  width="100%"
+                  height="100%"
+                  src="./assets/user.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="tweet-txt-side">
+              <textarea
+                placeholder="What's happening?"
+                class="tweet-textarea"
+              ></textarea>
+              <div class="tweet-pop-up-footer">
+                <div class="img-icon-container">
+                  <img
+                    width="100%"
+                    src="./assets/img-icon.svg"
+                    alt="img-icon.svg"
+                    alt=""
+                  />
+                </div>
+                <button class="tweet-pop-up-btn">Tweet</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- end tweet pop up -->
+
+      <!-- image setup pop up -->
+      <div class="tweet-pop-up display-none" id="user-pop-up-container">
+        <div class="tweet-pop-up-container">
+          <div class="tweet-pop-up-head">
+            <div
+              class="close-tweet lightgray-background"
+              id="close-user-image-pop"
+            >
+              x
+            </div>
+            <div class="pop-logo">
+              <img width="100%" src="./assets/logo.svg" alt="" />
+            </div>
+          </div>
+          <div class="user-pop-up-body">
+            <div class="padding-bottom">
+              <div class="font-large">Pick a profile picture</div>
+              <div class="font-small">
+                Have a favorite selfie? Upload it now.
+              </div>
+            </div>
+            <div class="user-pop-up-image">
+              <label
+                for="file-input"
+                class="user-pop-up-image-label cursor-pointer"
+              >
+                <img
+                  id="label-img"
+                  width="100%"
+                  src="./assets/user.svg"
+                  alt=""
+                />
+              </label>
+              <input class="file-input" id="file-input" type="file" />
+            </div>
+            <div class="user-pop-up-btn-container">
+              <button class="user-pop-up-btn">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+    </div>
+  </body>
+</html>

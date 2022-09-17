@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const mail = document.getElementById("mail");
   const dob = document.getElementById("dob");
   const signUpMsg = document.getElementById("sign-up-msg");
-  const signUpBtn = document.getElementById("get-code-btn");
+  const nextBtn = document.getElementById("next-btn");
 
   const validateSignUp = (name, mail, dob) => {
     valid = true;
@@ -66,14 +66,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
   name.addEventListener("input", () => {
     if (name.value.length < 5) {
-      signUpBtn.classList.add("gray-btn");
-      signUpBtn.classList.remove("blue-btn");
+      nextBtn.classList.add("gray-btn");
+      nextBtn.classList.remove("blue-btn");
     } else {
       signUpMsg.innerHTML = "";
       if (validateSignUp(name, mail, dob)) {
-        signUpBtn.classList.remove("gray-btn");
-        signUpBtn.classList.add("blue-btn");
-        signUpBtn.classList.add("btn");
+        nextBtn.classList.remove("gray-btn");
+        nextBtn.classList.add("blue-btn");
+        nextBtn.classList.add("btn");
       }
     }
   });
@@ -102,13 +102,13 @@ window.addEventListener("DOMContentLoaded", () => {
     ) {
       signUpMsg.innerHTML = "";
       if (validateSignUp(name, mail, dob)) {
-        signUpBtn.classList.remove("gray-btn");
-        signUpBtn.classList.add("blue-btn");
-        signUpBtn.classList.add("btn");
+        nextBtn.classList.remove("gray-btn");
+        nextBtn.classList.add("blue-btn");
+        nextBtn.classList.add("btn");
       }
     } else {
-      signUpBtn.classList.add("gray-btn");
-      signUpBtn.classList.remove("blue-btn");
+      nextBtn.classList.add("gray-btn");
+      nextBtn.classList.remove("blue-btn");
     }
   });
 
@@ -125,22 +125,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
   dob.addEventListener("change", () => {
     if (dob.value == "") {
-      signUpBtn.classList.add("gray-btn");
-      signUpBtn.classList.remove("blue-btn");
+      nextBtn.classList.add("gray-btn");
+      nextBtn.classList.remove("blue-btn");
     } else {
       if (validateSignUp(name, mail, dob)) {
-        signUpBtn.classList.remove("gray-btn");
-        signUpBtn.classList.add("blue-btn");
-        signUpBtn.classList.add("btn");
+        nextBtn.classList.remove("gray-btn");
+        nextBtn.classList.add("blue-btn");
+        nextBtn.classList.add("btn");
       }
     }
   });
 
-  // active signUpBtn
+  // active nextBtn
   const infoContainer = document.getElementById("sign-info-container");
   const codeContainer = document.getElementById("sign-code-container");
 
-  signUpBtn.addEventListener("click", () => {
+  nextBtn.addEventListener("click", () => {
     if (validateSignUp(name, mail, dob)) {
       localStorage.setItem("name", name.value);
       localStorage.setItem("mail", mail.value);
