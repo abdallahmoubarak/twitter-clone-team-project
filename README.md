@@ -14,10 +14,60 @@ First Group Project is to clone Twitter (Frontend & Backend):
 
 ---
 
+## TEAM Members
+
+#### - Project director & frontend developer:
+
+<a href='https://github.com/abdallahmoubarak'>Abdallah Moubarak<p><img width='150' src="https://avatars.githubusercontent.com/u/112470831?v=4" alt='' /></p></a>
+
+<img align="center" src="https://github-readme-stats.vercel.app/api?username=abdallahmoubarak&show_icons=true&locale=en" alt="" />
+
+#### - Backend developer:
+
+<a href='https://github.com/petersaba'> Peter Saba<p><img width='150' src="https://avatars.githubusercontent.com/u/112482625?v=4" alt='' /></p></a>
+<img align="center" src="https://github-readme-stats.vercel.app/api?username=petersaba&show_icons=true&locale=en" alt="" />
+
+---
+
 ## Project Process
 
-stage 1: creating ER diagram for the project
+#### Stage 1: creating ER diagram for the project
 
-stage 2: creating Figma design
+![](./src/erdiagram.png)
 
-stage 3: creating two branches for the project (frontend and backend)
+---
+
+#### Stage 2: creating Figma design
+
+##### Wireframe:
+
+![](./src/sign.png)
+
+##### Mockup:
+
+![](./src/signmock.png)
+
+![](./src/homemock.png)
+
+---
+
+#### Stage 3: creating two branches for the project (frontend and backend)
+
+repo link : https://github.com/abdallahmoubarak/twitter-clone-team-project
+
+<p align='center'>
+<img src='./src/html.svg' width='50' alt=''>
+<img src='./src/css.svg' width='50' alt=''>
+<img src='./src/javascript.svg' width='50' alt=''>
+<img src='./src/php.svg' height='50' alt=''>
+<img src='./src/mysql.svg' height='50' alt=''>
+</p>
+
+- Substage 1 : developing frontend pages using (html - css- js)
+- Substage 2 : implementing database
+- Substage 3 : developing api's using (php)
+- Substage 4 : fetching api and fitting them in frontend
+
+---
+
+#### Stage 4: Presenting the project
