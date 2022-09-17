@@ -869,6 +869,8 @@ label {
 /* user pop up image */
 .user-pop-up-body {
   padding: 2rem;
+  font-size: 1.2rem;
+  text-align: left;
 }
 .pop-logo {
   margin: auto;
@@ -878,7 +880,14 @@ label {
   position: absolute;
   left: 48%;
 }
-.user-pop-up-image-input {
+.user-pop-up-image {
+  position: relative;
+  margin: auto;
+  width: 13rem;
+  height: 13rem;
+}
+.user-pop-up-image-label {
+  margin: auto;
   width: 13rem;
   height: 13rem;
   background-color: #eee;
@@ -888,7 +897,14 @@ label {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   overflow: hidden;
-  margin: auto;
+  padding: 0;
+}
+
+.file-input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  width: 5rem;
 }
 
 /* media queries */
@@ -1044,4 +1060,11 @@ label {
 .font-small {
   font-size: 0.9em;
   color: gray;
+}
+.padding-bottom {
+  padding-bottom: 1rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
