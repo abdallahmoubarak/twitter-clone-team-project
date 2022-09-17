@@ -1,3 +1,6 @@
+const serverDir =
+  "http://localhost/github/twitter-clone-team-project/backend/api";
+
 window.addEventListener("DOMContentLoaded", () => {
   //  openning and clossing the sign popup
   const signUpPopBtn = document.getElementById("sign-up-pop-btn");
@@ -139,14 +142,23 @@ window.addEventListener("DOMContentLoaded", () => {
   // active nextBtn
   const infoContainer = document.getElementById("sign-info-container");
   const codeContainer = document.getElementById("sign-code-container");
+  const signUpmail = document.getElementById("mail");
 
   nextBtn.addEventListener("click", () => {
     if (validateSignUp(name, mail, dob)) {
-      localStorage.setItem("name", name.value);
-      localStorage.setItem("mail", mail.value);
-      localStorage.setItem("dob", dob.value);
-      infoContainer.classList.add("display-none");
-      codeContainer.classList.remove("display-none");
+      fetch(`${serverDir}/is_mail_exist.php?email=${signUpmail.value}`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (!data.success) {
+            localStorage.setItem("name", name.value);
+            localStorage.setItem("mail", mail.value);
+            localStorage.setItem("dob", dob.value);
+            infoContainer.classList.add("display-none");
+            codeContainer.classList.remove("display-none");
+          } else {
+            signUpMsg.innerHTML = "This email is alredy exist";
+          }
+        });
     }
   });
 
