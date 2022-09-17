@@ -35,4 +35,37 @@ window.addEventListener("DOMContentLoaded", () => {
     tabBarLikes.classList.add("display-none");
     tabBarTweets.classList.remove("display-none");
   });
+
+  // input change
+  const fileInput = document.getElementById("file-input");
+  const LabelImg = document.getElementById("label-img");
+
+  fileInput.addEventListener("input", (event) => {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function (event) {
+      LabelImg.src = event.target.result;
+      var b = btoa(event.target.result);
+    };
+  });
+
+  // close and open user image
+  const closeUserImagePop = document.getElementById("close-user-image-pop");
+  const userPopContainer = document.getElementById("user-pop-up-container");
+  const imagePopBtn1 = document.getElementById("image-pop-btn-1");
+  const imagePopBtn2 = document.getElementById("image-pop-btn-2");
+
+  closeUserImagePop.addEventListener("click", () => {
+    userPopContainer.classList.add("display-none");
+  });
+
+  imagePopBtn1.addEventListener("click", () => {
+    userPopContainer.classList.remove("display-none");
+    LabelImg.src = "./assets/user.svg";
+  });
+  imagePopBtn2.addEventListener("click", () => {
+    userPopContainer.classList.remove("display-none");
+    LabelImg.src = "./assets/user.svg";
+  });
 });

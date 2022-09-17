@@ -102,9 +102,17 @@
         <div class="head-img"></div>
         <div class="head-user-img-section">
           <div class="head-user-img-container">
-            <img width="100%" src="./assets/user.svg" alt="" />
+            <img
+              width="100%"
+              src="./assets/user.svg"
+              alt=""
+              id="image-pop-btn-1"
+            />
           </div>
-          <button class="lightgray-background setup font-bold">
+          <button
+            class="lightgray-background setup font-bold"
+            id="image-pop-btn-2"
+          >
             Set up profile
           </button>
         </div>
@@ -254,7 +262,7 @@
       <!-- end tweet pop up -->
 
       <!-- image setup pop up -->
-      <div class="tweet-pop-up" id="user-pop-up-container">
+      <div class="tweet-pop-up display-none" id="user-pop-up-container">
         <div class="tweet-pop-up-container">
           <div class="tweet-pop-up-head">
             <div
@@ -279,9 +287,17 @@
                 for="file-input"
                 class="user-pop-up-image-label cursor-pointer"
               >
-                <img width="100%" src="./assets/user.svg" alt="" />
+                <img
+                  id="label-img"
+                  width="100%"
+                  src="./assets/user.svg"
+                  alt=""
+                />
               </label>
               <input class="file-input" id="file-input" type="file" />
+            </div>
+            <div class="user-pop-up-btn-container">
+              <button class="user-pop-up-btn">Done</button>
             </div>
           </div>
         </div>
