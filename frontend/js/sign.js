@@ -202,7 +202,7 @@ window.addEventListener("DOMContentLoaded", () => {
   //  validating username while input
   password.addEventListener("blur", () => {
     var regularExpression =
-      /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,100}$/;
+      /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
     if (regularExpression.test(password.value)) {
       password.classList.remove("invalid-sign-input");
       signUpLastMsg.innerHTML = "";
@@ -218,17 +218,24 @@ window.addEventListener("DOMContentLoaded", () => {
   signUpBtn.addEventListener("click", () => {
     if (validateUserNameAndPass(userName.value, password.value)) {
       let formData = new FormData();
+      formData.append("full_name", localStorage.getItem("name"));
+      formData.append("email", localStorage.getItem("email"));
+      formData.append("birthdate", localStorage.getItem("dob"));
       formData.append("username", userName.value);
-      fetch(`${serverDir}/is_username_exist.php`, {
+      formData.append("password", password.value);
+      fetch(`${serverDir}/signup.php`, {
         method: "POST",
         body: formData,
       })
         .then((response) => response.json())
         .then((data) => {
-          if (!data.exist) {
+          if (!data.id)
+            return (signUpLastMsg.innerHTML = "This username is alredy exist");
+          else {
+            localStorage.setItem("user_id", data.id);
+            localStorage.setItem("full_name", localStorage.getItem("name"));
+            localStorage.setItem("username", userName.value);
             window.location.replace("/frontend/profile.html");
-          } else {
-            signUpLastMsg.innerHTML = "This username is alredy exist";
           }
         });
     }
@@ -247,7 +254,7 @@ window.addEventListener("DOMContentLoaded", () => {
 const validateUserNameAndPass = (username, password) => {
   valid = false;
   var regularExpression =
-    /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,100}$/;
+    /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
 
   if (username.length > 5 && regularExpression.test(password)) {
     valid = true;
