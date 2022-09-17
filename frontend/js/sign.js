@@ -146,12 +146,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
   nextBtn.addEventListener("click", () => {
     if (validateSignUp(name, mail, dob)) {
-      fetch(`${serverDir}/is_mail_exist.php?email=${signUpmail.value}`)
+      let formData = new FormData();
+      formData.append("email", signUpmail.value);
+      fetch(`${serverDir}/is_mail_exist.php`, {
+        method: "POST",
+        body: formData,
+      })
         .then((response) => response.json())
         .then((data) => {
-          if (!data.success) {
+          if (!data.exist) {
             localStorage.setItem("name", name.value);
-            localStorage.setItem("mail", mail.value);
+            localStorage.setItem("email", mail.value);
             localStorage.setItem("dob", dob.value);
             infoContainer.classList.add("display-none");
             codeContainer.classList.remove("display-none");
@@ -172,15 +177,80 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // sign done
 
-  const signupBtn = document.getElementById("sign-up-btn");
+  const signUpBtn = document.getElementById("sign-up-btn");
+  const userName = document.getElementById("user-name");
+  const password = document.getElementById("password");
+  const signUpLastMsg = document.getElementById("sign-up-last-msg");
 
-  signupBtn.addEventListener("click", () => {
-    window.location.replace("/frontend/profile.html");
+  //  validating username while input
+  userName.addEventListener("blur", () => {
+    if (userName.value.length > 5) {
+      userName.classList.remove("invalid-sign-input");
+      signUpLastMsg.innerHTML = "";
+    } else {
+      userName.classList.add("invalid-sign-input");
+      signUpLastMsg.innerHTML = "The user name is not valid";
+    }
+  });
+  userName.addEventListener("input", () => {
+    if (userName.value.length > 5) {
+      userName.classList.remove("invalid-sign-input");
+      signUpLastMsg.innerHTML = "";
+    }
   });
 
+  //  validating username while input
+  password.addEventListener("blur", () => {
+    var regularExpression =
+      /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,100}$/;
+    if (regularExpression.test(password.value)) {
+      password.classList.remove("invalid-sign-input");
+      signUpLastMsg.innerHTML = "";
+    } else {
+      password.classList.add("invalid-sign-input");
+      signUpLastMsg.innerHTML =
+        "Your password should be min 8 letter, with at least a symbol, upper and lower case letters and a number.";
+    }
+  });
+
+  // signUp btn
+
+  signUpBtn.addEventListener("click", () => {
+    if (validateUserNameAndPass(userName.value, password.value)) {
+      let formData = new FormData();
+      formData.append("username", userName.value);
+      fetch(`${serverDir}/is_username_exist.php`, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (!data.exist) {
+            window.location.replace("/frontend/profile.html");
+          } else {
+            signUpLastMsg.innerHTML = "This username is alredy exist";
+          }
+        });
+    }
+  });
+
+  // sign in process
   const signInBtn = document.getElementById("sign-in-btn");
 
   signInBtn.addEventListener("click", () => {
     window.location.replace("/frontend/home.html");
   });
 });
+
+// validating username and password for sign up
+
+const validateUserNameAndPass = (username, password) => {
+  valid = false;
+  var regularExpression =
+    /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,100}$/;
+
+  if (username.length > 5 && regularExpression.test(password)) {
+    valid = true;
+  }
+  return valid;
+};
