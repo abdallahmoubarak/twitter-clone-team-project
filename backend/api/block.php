@@ -28,8 +28,6 @@
     }
     if(isset($decrement_follower_count)){
         $response['decrement_follower_count'] = $decrement_follower_count;
-    }
-    if(isset($decrement_follower_count)){
         $response['decrement_following_count'] = $decrement_following_count;
     }
     
