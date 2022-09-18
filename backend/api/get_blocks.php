@@ -3,7 +3,7 @@
 
     $user = $_GET['user_id'];
 
-    // fetching needed information of users following the user
+    // fetching needed information of accounts blocked by the user
     $query = $mysqli->prepare('SELECT u.id, u.full_name, u.username, u.profile_picture_url
                                 FROM users AS u, blocks AS b
                                 WHERE b.blocker_id=? AND b.blocked_id = u.id');
@@ -11,7 +11,7 @@
     $query->execute();
     $result = $query->get_result();
 
-    $resonse = [];
+    $response = [];
     while($value = $result->fetch_assoc()){
         if($value['profile_picture_url']){
             $value['profiole_img'] = convertToBase64($value['profile_picture_url']);
