@@ -1,6 +1,6 @@
 <?php
 
-include_once("connection.php");
+include("connection.php");
 $email = $_POST['email'];
 
 $query = $mysqli->prepare("SELECT email FROM users WHERE email = ?");
