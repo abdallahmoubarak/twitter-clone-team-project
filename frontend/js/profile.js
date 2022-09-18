@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
   // following
-
   const following = document.getElementById("following");
   const followers = document.getElementById("followers");
   const blocks = document.getElementById("blocks");

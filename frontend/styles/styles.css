@@ -341,6 +341,7 @@ label {
 
 .user-img-container {
   background: rgb(207, 207, 207);
+  min-width: 2.6rem;
   width: 2.6rem;
   height: 2.6rem;
   border-radius: 50%;

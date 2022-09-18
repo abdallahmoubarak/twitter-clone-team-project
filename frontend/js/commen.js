@@ -1,4 +1,23 @@
 window.addEventListener("DOMContentLoaded", () => {
+  // setting values in their fields
+  const name = localStorage.getItem("full_name") || "";
+  const email = localStorage.getItem("email") || "";
+  const username = localStorage.getItem("username") || "";
+  const profileUrl = localStorage.getItem("profile-url") || "./assets/user.svg";
+  const crns = document.querySelectorAll(".crn");
+  const uns = document.querySelectorAll(".un");
+  const uis = document.querySelectorAll(".ui");
+
+  crns.forEach((crn) => {
+    crn.innerHTML = name;
+  });
+  uns.forEach((un) => {
+    un.innerHTML = "@" + username;
+  });
+  uis.forEach((ui) => {
+    ui.src = profileUrl;
+  });
+
   //  profile btn
   const profileBtn = document.getElementById("profile-btn");
 
