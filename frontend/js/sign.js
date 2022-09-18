@@ -243,9 +243,27 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // sign in process
   const signInBtn = document.getElementById("sign-in-btn");
+  const email = document.getElementById("email");
+  const pass = document.getElementById("pass");
+  const signInMsg = document.getElementById("sign-in-msg");
 
   signInBtn.addEventListener("click", () => {
-    window.location.replace("/frontend/home.html");
+    let formData = new FormData();
+    formData.append("email", email.value);
+    formData.append("password", pass.value);
+    fetch(`${serverDir}/signin.php`, { method: "POST", body: formData })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.msg) return (signInMsg.innerHTML = data.msg);
+        else {
+          localStorage.setItem("user_id", data.id);
+          localStorage.setItem("full_name", data.full_name);
+          localStorage.setItem("username", data.username);
+          localStorage.setItem("email", data.email);
+          console.log(data.full_name);
+          window.location.replace("/frontend/home.html");
+        }
+      });
   });
 });
 
