@@ -45,6 +45,18 @@ window.addEventListener("DOMContentLoaded", () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        tabBarTweets.innerHTML = data.map((item) =>
+          tweetComponant(
+            item.tweeter_id,
+            item.full_name,
+            item.username,
+            item.content,
+            item.likes_number,
+            `${serverDir}/api/${item.picture_url}`,
+            item.created_at
+          )
+        );
+        console.log(tweets);
 
         // add tweeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeets
       });
@@ -103,8 +115,8 @@ window.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         if (data.success) {
           localStorage.setItem(
-            "profile-url",
-            `${serverDir}/user_${userId}.jpg`
+            "profile_picture_url",
+            `${serverDir}/user_${userId}/profile.jpg`
           );
           userPopContainer.classList.add("display-none");
           uix.forEach((ui) => {

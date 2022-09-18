@@ -8,11 +8,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const name = localStorage.getItem("full_name") || "";
   const email = localStorage.getItem("email") || "";
   const username = localStorage.getItem("username") || "";
-  const profileUrl = localStorage.getItem("profile-url") || "./assets/user.svg";
+  const profileUrl = localStorage.getItem("profile_picture_url");
+  const headerUrl = localStorage.getItem("header_url");
   const userId = localStorage.getItem("user_id");
   const crns = document.querySelectorAll(".crn");
   const uns = document.querySelectorAll(".un");
   const uis = document.querySelectorAll(".ui");
+  const himg = document.getElementById("head-label-img");
 
   crns.forEach((crn) => {
     crn.innerHTML = name;
@@ -21,8 +23,14 @@ window.addEventListener("DOMContentLoaded", () => {
     un.innerHTML = "@" + username;
   });
   uis.forEach((ui) => {
-    ui.src = `${serverDir}/api/user_${userId}/profile.jpg`;
+    if (!!profileUrl)
+      return (ui.src = `${serverDir}/api/user_${userId}/profile.jpg`);
+    ui.src = "./assets/user.svg";
   });
+
+  if (!!headerUrl) {
+    himg.src = `${serverDir}/api/user_${userId}/header.jpg`;
+  }
 
   //  profile btn
   const profileBtn = document.getElementById("profile-btn");
@@ -157,7 +165,7 @@ const userComponant = () => {
 
 // tweet component
 const tweetComponant = (
-  userImage,
+  userId,
   userName,
   tweetUserName,
   tweetTxt,
@@ -171,7 +179,7 @@ const tweetComponant = (
       <img
         width="100%"
         height="100%"
-        src="${userImage}"
+        src="${serverDir}/api/user_${userId}/profile.jpg"
         alt=""
       />
     </div>
@@ -195,7 +203,7 @@ const tweetComponant = (
     <div class="tweet-body">
       <div class="tweet-txt">${tweetTxt}</div>
       <div class="tweet-img">
-        <img width="100%" src="${tweetImg}" alt="" />
+      ${tweetImg && `<img width="100%" src="${tweetImg}" alt="" />`}
       </div>
       <div class="like-button" id="like-btn">
         <div class="like-img">
