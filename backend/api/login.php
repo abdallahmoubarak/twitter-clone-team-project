@@ -1,7 +1,7 @@
 <?php 
     function login($option){
-        include_once('connection.php');
-        include_once('convert_images.php');
+        include('connection.php');
+        include('convert_images.php');
 
         if ($option == 'phone'){
             $phone = $_POST['phone'];

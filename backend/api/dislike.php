@@ -1,7 +1,7 @@
 <?php 
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Headers: *');
-    include_once('connection.php');
+    include('connection.php');
 
     $disliker = $_GET['disliker_id'];
     $tweet = $_GET['tweet_id'];

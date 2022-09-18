@@ -1,7 +1,7 @@
 <?php 
     header('Access-Control-Allow-Headers: *');
     header('Access-Control-Allow-Origin: *');
-    include_once('connection.php');
+    include('connection.php');
 
     $blocker = $_GET['blocker_id'];
     $blocked = $_GET['blocked_id'];

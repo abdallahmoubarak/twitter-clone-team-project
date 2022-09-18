@@ -1,7 +1,7 @@
 <?php 
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Headers: *');
-    include_once('connection.php');
+    include('connection.php');
 
     $follower = $_GET['follower_id'];
     $followed = $_GET['followed_id'];

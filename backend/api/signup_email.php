@@ -1,8 +1,7 @@
 <?php 
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: *");
-    include_once("signup.php");
+    include("sign_up.php");
 
     echo signUp("email");
-
 ?>

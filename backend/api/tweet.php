@@ -1,8 +1,8 @@
 <?php 
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Headers: *');
-    include_once('connection.php');
-    include_once('convert_images.php');
+    include('connection.php');
+    include('convert_images.php');
 
     $tweeter = $_POST['tweeter_id'];
     $content = $_POST['content'];

@@ -1,8 +1,8 @@
 <?php 
     header('Access-Control-Allow-Headers: *');
     header('Access-Control-Allow-Origin: *');
-    include_once('connection.php');
-    include_once('convert_images.php');
+    include('connection.php');
+    include('convert_images.php');
 
     $profile = $_GET['profile_id'];
 

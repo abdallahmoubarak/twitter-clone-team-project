@@ -1,8 +1,8 @@
 <?php 
     header('Access-Control-Allow-Headers: *');
     header('Access-Control-Allow-Origin: *');
-    include_once('connection.php');
-    include_once('unfollow_func.php');
+    include('connection.php');
+    include('unfollow_func.php');
 
     $blocker = $_GET['blocker_id'];
     $blocked = $_GET['blocked_id'];

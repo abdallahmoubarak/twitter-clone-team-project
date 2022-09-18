@@ -1,8 +1,8 @@
 <?php 
     header('Access-Control-Allow-Headers: *');
     header('Access-Control-Allow-Origin: *');
-    include_once('connection.php');
-    include_once('convert_images.php');
+    include('connection.php');
+    include('convert_images.php');
 
     $search = $_GET['search'];
     // pattern to match anything that starts with the value of search
