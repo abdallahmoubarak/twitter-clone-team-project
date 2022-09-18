@@ -16,10 +16,10 @@
     $response = [];
     while($value = $result->fetch_assoc()){
         // adding the base 64 image and removing the image path
-        if($value['picture_url']){
-            $value['image'] = convertToBase64($value['picture_url']);
-        }
-        unset($value['picture_url']);
+        // if($value['picture_url']){
+        //     $value['image'] = convertToBase64($value['picture_url']);
+        // }
+        // unset($value['picture_url']);
         $response[] = $value;
     }
 

@@ -16,10 +16,10 @@
     
     while($value = $result->fetch_assoc()){
         // return the base64 of the image and delete the picture url from the retreived data
-        if($value['picture_url']){
-            $value['image'] = convertToBase64($value['picture_url']);
-        }
-        unset($value['picture_url']);
+        // if($value['picture_url']){
+        //     $value['image'] = convertToBase64($value['picture_url']);
+        // }
+        // unset($value['picture_url']);
         $response[] = $value;
     }
 
