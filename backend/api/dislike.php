@@ -1,6 +1,4 @@
 <?php 
-    header('Access-Control-Allow-Origin: *');
-    header('Access-Control-Allow-Headers: *');
     include('connection.php');
 
     $disliker = $_GET['disliker_id'];

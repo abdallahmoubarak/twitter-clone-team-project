@@ -1,6 +1,4 @@
 <?php 
-    header('Access-Control-Allow-Headers: *');
-    header('Access-Control-Allow-Origin: *');
     include('connection.php');
     include('convert_images.php');
 

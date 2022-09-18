@@ -1,5 +1,7 @@
 <?php 
-
+    header('Access-Control-Allow-Headers: *');
+    header('Access-Control-Allow-Origin: *');
+    
     $host = "localhost";
     $username = "root";
     $password = null;
