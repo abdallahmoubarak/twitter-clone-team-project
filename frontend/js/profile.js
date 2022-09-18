@@ -115,6 +115,7 @@ window.addEventListener("DOMContentLoaded", () => {
       reader.onload = function (event) {
         headLabelImg.src = event.target.result;
         basedImg = btoa(event.target.result);
+        //
       };
     }
   });

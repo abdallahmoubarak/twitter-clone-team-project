@@ -1064,6 +1064,39 @@ label {
   }
 }
 
+/* user card */
+
+.user-item-container {
+  padding: 1rem;
+}
+.user-item {
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-card-btn-container {
+  display: flex;
+  gap: 0.3rem;
+  flex-direction: column;
+}
+.user-item-img-name {
+  display: flex;
+  gap: 1rem;
+}
+.user-item-img-name {
+  display: flex;
+  gap: 1rem;
+}
+
+/* media queries */
+
 @media screen and (max-width: 25rem) {
   .nav-column {
     position: fixed;

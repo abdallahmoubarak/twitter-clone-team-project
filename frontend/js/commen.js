@@ -123,6 +123,38 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+//
+const userComponant = () => {
+  return `<div class="user-item-container">
+  <div class="user-item">
+    <div class="user-item-img-name">
+      <div class="user-img-container">
+        <img class="ui" width="100%" src="" alt="" />
+      </div>
+      <div>
+        <div class="font-bold crn">User name</div>
+        <div class="font-small un">@username</div>
+      </div>
+    </div>
+    <div>
+      <div class="user-card-btn-container">
+        <button
+          class="lightgray-background setup font-bold"
+          id="follow-btn"
+        >
+          Follow</button
+        ><button
+          class="lightgray-background setup font-bold"
+          id="block-btn"
+        >
+          Block
+        </button>
+      </div>
+    </div>
+  </div>
+</div>`;
+};
+
 // tweet component
 const tweetComponant = (
   userImage,
@@ -176,5 +208,3 @@ const tweetComponant = (
 </div>
 `;
 };
-
-//
