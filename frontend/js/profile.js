@@ -45,6 +45,8 @@ window.addEventListener("DOMContentLoaded", () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+
+        // add tweeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeets
       });
   });
   var basedImg = "";
@@ -85,7 +87,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //  send image to the server
   const setImageBtn = document.getElementById("set-image-btn");
-  const uis = document.querySelectorAll(".ui");
+  const uix = document.querySelectorAll(".ui");
 
   setImageBtn.addEventListener("click", () => {
     var image = atob(basedImg).split("base64,")[1];
@@ -102,14 +104,17 @@ window.addEventListener("DOMContentLoaded", () => {
         if (data.success) {
           localStorage.setItem(
             "profile-url",
-            `${serverDir}/user_${userId}.png`
+            `${serverDir}/user_${userId}.jpg`
           );
-          uis.forEach((ui) => {
+          userPopContainer.classList.add("display-none");
+          uix.forEach((ui) => {
             ui.src = `${serverDir}/api/user_${userId}/profile.jpg`;
           });
         }
       });
   });
+
+  // header img
   const headImgInput = document.getElementById("head-img-input");
   const headLabelImg = document.getElementById("head-label-img");
 
@@ -121,7 +126,27 @@ window.addEventListener("DOMContentLoaded", () => {
       reader.onload = function (event) {
         headLabelImg.src = event.target.result;
         basedImg = btoa(event.target.result);
+
         //
+        let image = atob(basedImg).split("base64,")[1];
+        let formData = new FormData();
+        formData.append("profile_id", userId);
+        formData.append("image", image);
+
+        fetch(`${serverDir}/api/add_header_pic.php`, {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              localStorage.setItem(
+                "header-url",
+                `${serverDir}/user_${userId}.jpg`
+              );
+              headLabelImg.src = `${serverDir}/api/user_${userId}/header.jpg`;
+            }
+          });
       };
     }
   });
