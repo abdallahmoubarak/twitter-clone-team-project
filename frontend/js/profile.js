@@ -56,9 +56,6 @@ window.addEventListener("DOMContentLoaded", () => {
             item.created_at
           )
         );
-        console.log(tweets);
-
-        // add tweeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeets
       });
   });
   var basedImg = "";
@@ -73,6 +70,7 @@ window.addEventListener("DOMContentLoaded", () => {
       reader.readAsDataURL(file);
       reader.onload = function (event) {
         labelImg.src = event.target.result;
+        localStorage.setItem("profile_picture_url", event.target.result);
         basedImg = btoa(event.target.result);
       };
     }
@@ -116,11 +114,12 @@ window.addEventListener("DOMContentLoaded", () => {
         if (data.success) {
           localStorage.setItem(
             "profile_picture_url",
-            `${serverDir}/user_${userId}/profile.jpg`
+            `${serverDir}/api/user_${userId}/profile.jpg`
           );
           userPopContainer.classList.add("display-none");
+
           uix.forEach((ui) => {
-            ui.src = `${serverDir}/api/user_${userId}/profile.jpg`;
+            ui.src = localStorage.getItem("profile_picture_url");
           });
         }
       });
