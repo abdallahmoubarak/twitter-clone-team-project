@@ -1,5 +1,7 @@
+// const serverDir =
+//   "http://localhost/github/twitter-clone-team-project/backend/api";
 const serverDir =
-  "http://localhost/github/twitter-clone-team-project/backend/api";
+  "http://localhost/github/peter-backend/twitter-clone-team-project/backend/api";
 
 window.addEventListener("DOMContentLoaded", () => {
   // setting values in their fields
@@ -60,6 +62,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const tweetPopUpBtn = document.getElementById("tweet-pop-up-btn");
   const tweetPopUp = document.getElementById("tweet-pop-up");
   const closeTweet = document.getElementById("close-tweet");
+  var basedImg = "";
 
   tweetPopUpBtn.addEventListener("click", () => {
     tweetPopUp.classList.remove("display-none");
@@ -71,8 +74,9 @@ window.addEventListener("DOMContentLoaded", () => {
   // attach image to tweeet
 
   const tweetfileInput = document.getElementById("tweet-file-input");
-  const tweetLabelImg = document.getElementById("tweet-label-img");
   const tweetPopImg = document.getElementById("tweet-pop-up-image");
+  const tweetLabelImg = document.getElementById("tweet-label-img");
+
   tweetfileInput.addEventListener("input", (event) => {
     var file = event.target.files[0];
     var reader = new FileReader();
@@ -84,10 +88,11 @@ window.addEventListener("DOMContentLoaded", () => {
         tweetPopImg.style.height = "82%";
         tweetPopImg.style.borderRadius = "1rem";
         tweetPopImg.style.border = "1px solid  #1da1f2";
-        var b = btoa(event.target.result);
+        basedImg = btoa(event.target.result);
       };
     } else {
       tweetLabelImg.src = "./assets/img-icon.svg";
+      basedImg = "";
     }
   });
   // post the tweet btn
@@ -95,13 +100,23 @@ window.addEventListener("DOMContentLoaded", () => {
   const tweetContent = document.getElementById("tweet-content");
 
   postTweetBtn.addEventListener("click", () => {
+    // var image = basedImg.replace(/^data:image\/[a-z]+;base64,/, "");
+    var image = atob(basedImg).split("base64,")[1];
     let formData = new FormData();
-    formData.append("user_id", userId);
+    formData.append("tweeter_id", userId);
     formData.append("content", tweetContent.value);
+    console.log(image);
+    formData.append("image", image);
     fetch(`${serverDir}/tweet.php`, { method: "POST", body: formData })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         if (data.success) {
+          tweetPopImg.style.width = "1.4rem";
+          tweetPopImg.style.height = "1.4rem";
+          tweetPopImg.style.borderRadius = "0rem";
+          tweetPopImg.style.border = "none";
+          tweetLabelImg.src = "./assets/img-icon.svg";
           tweetContent.value = "";
           tweetPopUp.classList.add("display-none");
         }

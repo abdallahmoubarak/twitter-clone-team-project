@@ -1,5 +1,7 @@
+// const serverDir =
+//   "http://localhost/github/twitter-clone-team-project/backend/api";
 const serverDir =
-  "http://localhost/github/twitter-clone-team-project/backend/api";
+  "http://localhost/github/peter-backend/twitter-clone-team-project/backend/api";
 
 window.addEventListener("DOMContentLoaded", () => {
   //  openning and clossing the sign popup
