@@ -1,7 +1,7 @@
 // const serverDir =
 //   "http://localhost/github/twitter-clone-team-project/backend/api";
 const serverDir =
-  "http://localhost/github/peter-backend/twitter-clone-team-project/backend/api";
+  "http://localhost/github/peter-backend/twitter-clone-team-project/backend";
 
 window.addEventListener("DOMContentLoaded", () => {
   //  openning and clossing the sign popup
@@ -150,7 +150,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (validateSignUp(name, mail, dob)) {
       let formData = new FormData();
       formData.append("email", signUpmail.value);
-      fetch(`${serverDir}/is_mail_exist.php`, {
+      fetch(`${serverDir}/api/is_mail_exist.php`, {
         method: "POST",
         body: formData,
       })
@@ -225,7 +225,7 @@ window.addEventListener("DOMContentLoaded", () => {
       formData.append("birthdate", localStorage.getItem("dob"));
       formData.append("username", userName.value);
       formData.append("password", password.value);
-      fetch(`${serverDir}/signup.php`, {
+      fetch(`${serverDir}/api/signup.php`, {
         method: "POST",
         body: formData,
       })
@@ -253,7 +253,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let formData = new FormData();
     formData.append("email", email.value);
     formData.append("password", pass.value);
-    fetch(`${serverDir}/signin.php`, { method: "POST", body: formData })
+    fetch(`${serverDir}/api/signin.php`, { method: "POST", body: formData })
       .then((response) => response.json())
       .then((data) => {
         if (data.msg) return (signInMsg.innerHTML = data.msg);
@@ -262,6 +262,10 @@ window.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("full_name", data.full_name);
           localStorage.setItem("username", data.username);
           localStorage.setItem("email", data.email);
+          localStorage.setItem("follower_count", data.follower_count);
+          localStorage.setItem("following_count", data.following_count);
+          localStorage.setItem("profile_picture_url", data.profile_picture_url);
+          localStorage.setItem("header_url", data.header_url);
           window.location.replace("/frontend/home.html");
         }
       });

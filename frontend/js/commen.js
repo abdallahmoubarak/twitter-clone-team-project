@@ -1,7 +1,7 @@
 // const serverDir =
 //   "http://localhost/github/twitter-clone-team-project/backend/api";
 const serverDir =
-  "http://localhost/github/peter-backend/twitter-clone-team-project/backend/api";
+  "http://localhost/github/peter-backend/twitter-clone-team-project/backend";
 
 window.addEventListener("DOMContentLoaded", () => {
   // setting values in their fields
@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
     un.innerHTML = "@" + username;
   });
   uis.forEach((ui) => {
-    ui.src = profileUrl;
+    ui.src = `${serverDir}/api/user_${userId}/profile.jpg`;
   });
 
   //  profile btn
@@ -105,9 +105,8 @@ window.addEventListener("DOMContentLoaded", () => {
     let formData = new FormData();
     formData.append("tweeter_id", userId);
     formData.append("content", tweetContent.value);
-    console.log(image);
     formData.append("image", image);
-    fetch(`${serverDir}/tweet.php`, { method: "POST", body: formData })
+    fetch(`${serverDir}/api/tweet.php`, { method: "POST", body: formData })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -177,3 +176,5 @@ const tweetComponant = (
 </div>
 `;
 };
+
+//

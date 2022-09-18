@@ -1,4 +1,11 @@
+// const serverDir =
+//   "http://localhost/github/twitter-clone-team-project/backend/api";
+// const serverDir =
+//   "http://localhost/github/peter-backend/twitter-clone-team-project/backend";
+
 window.addEventListener("DOMContentLoaded", () => {
+  const userId = localStorage.getItem("user_id");
+
   // following
   const following = document.getElementById("following");
   const followers = document.getElementById("followers");
@@ -34,7 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
     tabBarLikes.classList.add("display-none");
     tabBarTweets.classList.remove("display-none");
   });
-
+  var basedImg = "";
   // input change
   const fileInput = document.getElementById("file-input");
   const labelImg = document.getElementById("label-img");
@@ -46,7 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
       reader.readAsDataURL(file);
       reader.onload = function (event) {
         labelImg.src = event.target.result;
-        var b = btoa(event.target.result);
+        basedImg = btoa(event.target.result);
       };
     }
   });
@@ -68,5 +75,47 @@ window.addEventListener("DOMContentLoaded", () => {
   imagePopBtn2.addEventListener("click", () => {
     userPopContainer.classList.remove("display-none");
     labelImg.src = "./assets/user.svg";
+  });
+
+  //  send image to the server
+  const setImageBtn = document.getElementById("set-image-btn");
+  const uis = document.querySelectorAll(".ui");
+
+  setImageBtn.addEventListener("click", () => {
+    var image = atob(basedImg).split("base64,")[1];
+    let formData = new FormData();
+    formData.append("profile_id", userId);
+    formData.append("image", image);
+
+    fetch(`${serverDir}/api/add_profile_pic.php`, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          localStorage.setItem(
+            "profile-url",
+            `${serverDir}/user_${userId}.png`
+          );
+          uis.forEach((ui) => {
+            ui.src = `${serverDir}/api/user_${userId}/profile.jpg`;
+          });
+        }
+      });
+  });
+  const headImgInput = document.getElementById("head-img-input");
+  const headLabelImg = document.getElementById("head-label-img");
+
+  headImgInput.addEventListener("input", (event) => {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    if (file) {
+      reader.readAsDataURL(file);
+      reader.onload = function (event) {
+        headLabelImg.src = event.target.result;
+        basedImg = btoa(event.target.result);
+      };
+    }
   });
 });
