@@ -14,10 +14,10 @@
     // remove the password as it will not be used
     unset($result['password']);
     // delete image url and add images as base64
-    $result['profile_img'] = convertToBase64($result['profile_picture_url']);
-    unset($result['profile_picture_url']);
-    $result['header_img'] = convertToBase64($result['header_url']);
-    unset($result['header_url']);
+    // $result['profile_img'] = convertToBase64($result['profile_picture_url']);
+    // unset($result['profile_picture_url']);
+    // $result['header_img'] = convertToBase64($result['header_url']);
+    // unset($result['header_url']);
     
     echo json_encode($result);
 ?>

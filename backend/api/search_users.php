@@ -15,10 +15,10 @@
     $response = [];
     // adding the profile image as bas 64 if there is one and removing the profile picture url
     while($value = $result->fetch_assoc()){
-        if($value['profile_picture_url']){
-            $value['profile_img'] = convertToBase64($value['profile_picture_url']);
-        }
-        unset($value['profile_picture_url']);
+        // if($value['profile_picture_url']){
+        //     $value['profile_img'] = convertToBase64($value['profile_picture_url']);
+        // }
+        // unset($value['profile_picture_url']);
         $response[] = $value;
     }
 
