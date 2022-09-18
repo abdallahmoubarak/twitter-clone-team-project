@@ -37,16 +37,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // input change
   const fileInput = document.getElementById("file-input");
-  const LabelImg = document.getElementById("label-img");
+  const labelImg = document.getElementById("label-img");
 
   fileInput.addEventListener("input", (event) => {
     var file = event.target.files[0];
     var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function (event) {
-      LabelImg.src = event.target.result;
-      var b = btoa(event.target.result);
-    };
+    if (file) {
+      reader.readAsDataURL(file);
+      reader.onload = function (event) {
+        labelImg.src = event.target.result;
+        var b = btoa(event.target.result);
+      };
+    }
   });
 
   // close and open user image
@@ -61,10 +63,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   imagePopBtn1.addEventListener("click", () => {
     userPopContainer.classList.remove("display-none");
-    LabelImg.src = "./assets/user.svg";
+    labelImg.src = "./assets/user.svg";
   });
   imagePopBtn2.addEventListener("click", () => {
     userPopContainer.classList.remove("display-none");
-    LabelImg.src = "./assets/user.svg";
+    labelImg.src = "./assets/user.svg";
   });
 });

@@ -234,14 +234,26 @@
                 class="tweet-textarea"
               ></textarea>
               <div class="tweet-pop-up-footer">
-                <div class="img-icon-container">
-                  <img
-                    width="100%"
-                    src="./assets/img-icon.svg"
-                    alt="img-icon.svg"
-                    alt=""
+                <div class="tweet-pop-up-image" id="tweet-pop-up-image">
+                  <label
+                    for="tweet-file-input"
+                    class="tweet-pop-up-image-label cursor-pointer"
+                  >
+                    <img
+                      id="tweet-label-img"
+                      width="100%"
+                      src="./assets/img-icon.svg"
+                      alt="img-icon.svg"
+                      alt=""
+                    />
+                  </label>
+                  <input
+                    class="tweet-file-input"
+                    id="tweet-file-input"
+                    type="file"
                   />
                 </div>
+
                 <button class="tweet-pop-up-btn">Tweet</button>
               </div>
             </div>

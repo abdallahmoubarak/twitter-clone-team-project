@@ -64,10 +64,33 @@ window.addEventListener("DOMContentLoaded", () => {
     tweetPopUp.classList.add("display-none");
   });
 
+  // attach image to tweeet
+
+  const tweetfileInput = document.getElementById("tweet-file-input");
+  const tweetLabelImg = document.getElementById("tweet-label-img");
+  const tweetPopImg = document.getElementById("tweet-pop-up-image");
+  tweetfileInput.addEventListener("input", (event) => {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    if (file) {
+      reader.readAsDataURL(file);
+      reader.onload = function (event) {
+        tweetLabelImg.src = event.target.result;
+        tweetPopImg.style.width = "82%";
+        tweetPopImg.style.height = "82%";
+        tweetPopImg.style.borderRadius = "1rem";
+        tweetPopImg.style.border = "1px solid  #1da1f2";
+        var b = btoa(event.target.result);
+      };
+    } else {
+      tweetLabelImg.src = "./assets/img-icon.svg";
+    }
+  });
+
   // like btn
 });
 
-const tweetBlock = (
+const tweetCompoinant = (
   userImage,
   userName,
   tweetUserName,
