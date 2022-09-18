@@ -1,9 +1,13 @@
+const serverDir =
+  "http://localhost/github/twitter-clone-team-project/backend/api";
+
 window.addEventListener("DOMContentLoaded", () => {
   // setting values in their fields
   const name = localStorage.getItem("full_name") || "";
   const email = localStorage.getItem("email") || "";
   const username = localStorage.getItem("username") || "";
   const profileUrl = localStorage.getItem("profile-url") || "./assets/user.svg";
+  const userId = localStorage.getItem("user_id");
   const crns = document.querySelectorAll(".crn");
   const uns = document.querySelectorAll(".un");
   const uis = document.querySelectorAll(".ui");
@@ -86,11 +90,27 @@ window.addEventListener("DOMContentLoaded", () => {
       tweetLabelImg.src = "./assets/img-icon.svg";
     }
   });
+  // post the tweet btn
+  const postTweetBtn = document.getElementById("post-tweet-btn");
+  const tweetContent = document.getElementById("tweet-content");
 
-  // like btn
+  postTweetBtn.addEventListener("click", () => {
+    let formData = new FormData();
+    formData.append("user_id", userId);
+    formData.append("content", tweetContent.value);
+    fetch(`${serverDir}/tweet.php`, { method: "POST", body: formData })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          tweetContent.value = "";
+          tweetPopUp.classList.add("display-none");
+        }
+      });
+  });
 });
 
-const tweetCompoinant = (
+// tweet component
+const tweetComponant = (
   userImage,
   userName,
   tweetUserName,

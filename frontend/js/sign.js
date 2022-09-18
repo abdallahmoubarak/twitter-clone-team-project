@@ -260,7 +260,6 @@ window.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("full_name", data.full_name);
           localStorage.setItem("username", data.username);
           localStorage.setItem("email", data.email);
-          console.log(data.full_name);
           window.location.replace("/frontend/home.html");
         }
       });
