@@ -2,7 +2,7 @@
 
     // checks if a value is already assigned to the given attribute name in the users table
     function isAttributeAlreadyUsed($attribute_name, $attribute_value){
-        include_once("connection.php");
+        include("connection.php");
         $query = $mysqli->prepare("SELECT " . $attribute_name . " FROM users WHERE " . $attribute_name . "=?");
         $query->bind_param('s', $attribute_value);
         $query->execute();
