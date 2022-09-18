@@ -19,6 +19,10 @@
         //     $value['profile_img'] = convertToBase64($value['profile_picture_url']);
         // }
         // unset($value['profile_picture_url']);
+
+        if(!$value['profile_picture_url']){
+            unset($value['profile_picture_url']);
+        }
         $response[] = $value;
     }
 

@@ -20,6 +20,11 @@
         //     $value['image'] = convertToBase64($value['picture_url']);
         // }
         // unset($value['picture_url']);
+
+        // remove the picture if there is none in the database
+        if(!$value['picture_url']){
+            unset($value['picture_url']);
+        }
         $response[] = $value;
     }
 

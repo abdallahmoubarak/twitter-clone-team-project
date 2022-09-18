@@ -18,6 +18,14 @@
     // unset($result['profile_picture_url']);
     // $result['header_img'] = convertToBase64($result['header_url']);
     // unset($result['header_url']);
+
+    // remove the images if there are none
+    if(!$result['profile_picture_url']){
+        unset($result['profile_picture_url']);
+    }
+    if(!$result['header_url']){
+        unset($result['header_url']);
+    }
     
     echo json_encode($result);
 ?>
