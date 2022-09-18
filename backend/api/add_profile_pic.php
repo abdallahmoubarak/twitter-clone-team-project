@@ -7,7 +7,6 @@
     $image = $_POST['image'];
     $profile = $_POST['profile_id'];
 
-    $image = convertToBase64($image);
     // saving the image in the directory specified for the user
     $image = convertToImg($image, 'user_'.$profile.'/profile.jpg');
 
