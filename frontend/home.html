@@ -75,7 +75,7 @@
                 <div class="user-img-container">
                   <img class="ui" width="100%" src="" alt="" />
                 </div>
-                <div class="tablet-mode-display-none">
+                <div>
                   <div class="font-bold crn">User name</div>
                   <div class="font-small un">@username</div>
                 </div>
@@ -154,6 +154,7 @@
         </div>
       </div>
       <!-- Search column end-->
+
       <!-- tweet pop-up -->
       <div class="tweet-pop-up display-none" id="tweet-pop-up">
         <div class="tweet-pop-up-container">
@@ -172,22 +173,38 @@
               <textarea
                 placeholder="What's happening?"
                 class="tweet-textarea"
+                id="tweet-content"
               ></textarea>
               <div class="tweet-pop-up-footer">
-                <div class="img-icon-container">
-                  <img
-                    width="100%"
-                    src="./assets/img-icon.svg"
-                    alt="img-icon.svg"
-                    alt=""
+                <div class="tweet-pop-up-image" id="tweet-pop-up-image">
+                  <label
+                    for="tweet-file-input"
+                    class="tweet-pop-up-image-label cursor-pointer"
+                  >
+                    <img
+                      id="tweet-label-img"
+                      width="100%"
+                      src="./assets/img-icon.svg"
+                      alt=""
+                    />
+                  </label>
+                  <input
+                    class="tweet-file-input"
+                    id="tweet-file-input"
+                    type="file"
                   />
                 </div>
-                <button class="tweet-pop-up-btn">Tweet</button>
+
+                <button class="tweet-pop-up-btn" id="post-tweet-btn">
+                  Tweet
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- end tweet pop up -->
     </div>
   </body>
 </html>
