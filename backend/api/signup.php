@@ -2,15 +2,20 @@
 
     // option paramter to know if the user will sign up with email or phone 
     function signUp($option){
-        include_once('connection.php');
+        include('connection.php');
+        include('is_attribute_used.php');
         if($option == 'phone'){
             $phone = $_POST[$option];
         }else if ($option == 'email'){
             $email = $_POST[$option];
         }
+        $username = $_POST['username'];
+        if(isAttributeAlreadyUsed('username', $username)){
+            $response['success'] = FALSE;
+            return json_encode($response);
+        }
         $full_name = $_POST['full_name'];
         $birthdate = $_POST['birthdate'];
-        $username = $_POST['username'];
         $password = $_POST['password'];
         $password = hash('sha256', $password);
         
