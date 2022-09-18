@@ -40,6 +40,12 @@ window.addEventListener("DOMContentLoaded", () => {
     likes.classList.remove("active");
     tabBarLikes.classList.add("display-none");
     tabBarTweets.classList.remove("display-none");
+
+    fetch(`${serverDir}/api/own_tweets.php?profile_id=${userId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
   });
   var basedImg = "";
   // input change
